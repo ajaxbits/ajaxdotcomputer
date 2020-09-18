@@ -5,13 +5,13 @@ const typography = new Typography({
   baseLineHeight: 1.666,
   googleFonts: [
     {
-      name: 'Shrikhand',
+      name: 'Eczar',
       styles: [
-        '400',
+        '600',
       ],
     },
     {
-      name: 'Open Sans',
+      name: 'IBM Plex Mono',
       styles: [
         '400',
         '400i',
@@ -20,8 +20,8 @@ const typography = new Typography({
       ],
     },
   ],
-  headerFontFamily: ["Shrikhand"],
-  bodyFontFamily: ["Open Sans"],
+  headerFontFamily: ["Eczar"],
+  bodyFontFamily: ["IBM Plex Mono"],
   headerWeight: "normal",
   scaleRatio: 2.5,
   headerColor: `#efefef`,
