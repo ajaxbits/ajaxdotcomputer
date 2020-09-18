@@ -5,6 +5,7 @@ import Layout from "../components/layout"
 import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
 import SEO from "../components/seo"
+import Flex from "../components/flex"
 
 
 export default function IndexPage() {
@@ -12,7 +13,7 @@ export default function IndexPage() {
     {
       file(relativePath: {eq: "moody-headshot.jpg"}) {
         childImageSharp {
-          fluid(duotone: {highlight: "#efefef", shadow: "2a2a2a"}, maxWidth: 200, quality: 100) {
+          fluid(duotone: {highlight: "#efefef", shadow: "#2a2a2a"}, maxWidth: 200, quality: 100) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -22,18 +23,36 @@ export default function IndexPage() {
   return (
     <Layout>
       <SEO title="Home" />
-      <h1>
-        hey,
-      <br />
-      I'm Alex Jackson
-    </h1>
+      <div style={{
+        maxWidth: `200px`,
+        margin: `auto`,
+      }}>
+        <Img
+          fluid={data.file.childImageSharp.fluid}
+          alt="Alex Jackson looks into the camera."
+        />
+      </div>
+      <p>Hi,</p>
+      <h1>I'm Alex Jackson, and I care about people and how they use technology. I'm on a journey to <span style={{ background: `linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%)`, WebkitBackgroundClip: `text`, WebkitTextFillColor: `transparent`, }}>safeguard those who need help</span>, <span style={{ background: `linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%)`, WebkitBackgroundClip: `text`, WebkitTextFillColor: `transparent`, }}>enable those without a voice</span>, and <span style={{ background: `linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%)`, WebkitBackgroundClip: `text`, WebkitTextFillColor: `transparent`, }}>make your life easier every day</span>.</h1>
 
-      <Img
-        fluid={data.file.childImageSharp.fluid}
-        alt="Alex Jackson looks into the camera."
-      />
+      <h1>I'm here to learn.</h1>
+      <div style={{
+        margin: `0 15px 0 15px`,
+        border: `1px solid #ececec`,
+        padding: `10px`
+      }}>
+        <h2>I'm looking to make the web a safer place for everyone.</h2>
+        <p>I've always been very interested in security for everyone. How can we make the internet a safe place for us all?</p>
+      </div>
+      <div style={{
+        margin: `0 15px 0 15px`,
+        border: `1px solid #ececec`,
+        padding: `10px`
+      }}>
+        <h2>The Interet should be accessible.</h2>
+        <p>I've always been very interested in security for everyone. How can we make the internet a safe place for us all?</p>
+      </div>
 
-      <p>I'm a junior web developer centered in Chicago.</p>
 
       <Link to="https://github.com/beattheprose">
         <p>Check out more at my GitHub</p>

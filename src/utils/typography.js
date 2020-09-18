@@ -23,7 +23,7 @@ const typography = new Typography({
   headerFontFamily: ["Eczar"],
   bodyFontFamily: ["IBM Plex Mono"],
   headerWeight: "normal",
-  scaleRatio: 2.5,
+  scaleRatio: 2,
   headerColor: `#efefef`,
   bodyColor: `#efefef`,
 })
