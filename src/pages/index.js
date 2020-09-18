@@ -12,7 +12,7 @@ export default function IndexPage() {
     {
       file(relativePath: {eq: "moody-headshot.jpg"}) {
         childImageSharp {
-          fluid(duotone: {highlight: "#efefef", shadow: "2a2a2a"}, maxWidth: 200) {
+          fluid(duotone: {highlight: "#efefef", shadow: "2a2a2a"}, maxWidth: 200, quality: 100) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -29,7 +29,7 @@ export default function IndexPage() {
     </h1>
 
       <Img
-        fixed={data.file.childImageSharp.fluid}
+        fluid={data.file.childImageSharp.fluid}
         alt="Alex Jackson looks into the camera."
       />
 
