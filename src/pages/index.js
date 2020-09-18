@@ -18,9 +18,10 @@ const Headshot = styled.div`
   margin: auto;
 `
 
-const Flex = styled.div`
-  display: flex;
-  flex-direction: row;
+const Header = styled.div`
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 25px;
 `
 
 export default function IndexPage() {
@@ -28,8 +29,8 @@ export default function IndexPage() {
     {
       file(relativePath: {eq: "happy-headshot.jpg"}) {
         childImageSharp {
-          fluid(grayscale: true, maxWidth: 200, quality: 100) {
-            ...GatsbyImageSharpFluid
+          fixed(grayscale: false, width: 400, quality: 100) {
+            ...GatsbyImageSharpFixed
           }
         }
       }
@@ -40,17 +41,20 @@ export default function IndexPage() {
   return (
     <Layout>
       <SEO title="Home" />
-      <Headshot>
-        <Img
-          fluid={data.file.childImageSharp.fluid}
-          alt="Alex Jackson looks into the camera."
-        />
-      </Headshot>
-      <div>
-        <p>Hi,</p>
-        <h1>I'm Alex Jackson, and I care about people and how they use technology. I'm on a journey to <span style={{ background: `linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%)`, WebkitBackgroundClip: `text`, WebkitTextFillColor: `transparent`, }}>safeguard those who need help</span>, <span style={{ background: `linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%)`, WebkitBackgroundClip: `text`, WebkitTextFillColor: `transparent`, }}>enable those without a voice</span>, and <span style={{ background: `linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%)`, WebkitBackgroundClip: `text`, WebkitTextFillColor: `transparent`, }}>make your life easier every day</span>.</h1>
-        <h1>I'm here to learn.</h1>
-      </div>
+      <Header>
+        <Headshot>
+          <Img
+            fixed={data.file.childImageSharp.fixed}
+            alt="Alex Jackson looks into the camera."
+          />
+        </Headshot>
+        <div>
+          <p>Hi,</p>
+          <h1>I'm Alex Jackson. I care about <u>people</u> and how they use technology.</h1>
+          <h1>I'm on a journey to <span style={{ background: `linear-gradient(90deg, rgba(168,70,233,1) 0%, rgba(255,71,71,1) 50%, rgba(252,180,78,1) 100%)`, WebkitBackgroundClip: `text`, WebkitTextFillColor: `transparent`, }}>safeguard those who need help<span style={{ WebkitTextFillColor: `#efefef` }}>,</span> enable those without a voice<span style={{ WebkitTextFillColor: `#efefef` }}>, and </span>make life easier every day</span>.</h1>
+          <h1>I'm here to learn and work toward a better future.</h1>
+        </div>
+      </Header>
 
       <Card>
         <h2>Creations</h2>
@@ -106,34 +110,12 @@ export default function IndexPage() {
         }} to="https://github.com/beattheprose">
           <h4>Github</h4>
         </Link>
-
+        <Link style={{
+          color: `#efefef`
+        }} to="https://www.alexjackson.net">
+          <h4>Artistic Personal Website</h4>
+        </Link>
       </Card>
-
-
-      <h2 id="#portfolio">Check my stuff out</h2>
-      <Link style={{
-        color: `#efefef`
-      }} to="https://www.gracebobber.com">Pure HTML and CSS Website for my partner</Link>
-      <h2 id="#skills">Skills</h2>
-
-      <h3>Things I'm Learning</h3>
-      <ul>
-        <li>Javascript</li>
-        <li>
-          Svelte/Sapper
-        <a href="https://github.com/beattheprose/ajaxdotcomputer">
-            <em>(this website!)</em>
-          </a>
-        </li>
-        <li>React</li>
-      </ul>
-      <h3>Next Steps</h3>
-      <ul>
-        <li>Tests</li>
-        <li>Open source contributions</li>
-        <li>Typescript</li>
-        <li>Nix-env</li>
-      </ul>
     </Layout>
   )
 }
