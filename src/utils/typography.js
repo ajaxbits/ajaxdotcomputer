@@ -1,6 +1,6 @@
 import Typography from "typography";
 
-const typography = new Typography({
+let typography = new Typography({
   baseFontSize: "18px",
   baseLineHeight: 1.666,
   googleFonts: [
@@ -26,6 +26,9 @@ const typography = new Typography({
   scaleRatio: 2,
   headerColor: `#efefef`,
   bodyColor: `#efefef`,
-})
+});
+
+//tighten paragraph spacing a bit
+typography.blockMarginBottom = typography.baseLineHeight * 0.75;
 
 export default typography

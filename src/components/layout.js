@@ -20,14 +20,14 @@ const Layout = ({ children }) => {
       style={{
         background: `#2a2a2a`
       }}>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <div
         style={{
           margin: `0 auto`,
-          maxWidth: 750,
+          maxWidth: `95vw`,
           padding: `0 1.0875rem 1.45rem`,
         }}
       >
+        <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
         <main>{children}</main>
         <footer style={{
           marginTop: `2rem`
