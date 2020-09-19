@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "./header"
+// import Header from "./header"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -23,11 +23,11 @@ const Layout = ({ children }) => {
       <div
         style={{
           margin: `0 auto`,
-          maxWidth: `95vw`,
-          padding: `0 1.0875rem 1.45rem`,
+          maxWidth: `750px`,
+          padding: `25px 1.0875rem 1.45rem 25px`,
         }}
       >
-        <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+        {/* <Header siteTitle={data.site.siteMetadata?.title || `Title`} /> */}
         <main>{children}</main>
         <footer style={{
           marginTop: `2rem`
