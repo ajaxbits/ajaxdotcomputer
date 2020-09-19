@@ -58,6 +58,11 @@ export default function IndexPage() {
                 </Link></li>
               <li><Link style={{
                 color: `#efefef`,
+              }} to="https://notes.ajax.computer">
+                My public notes (Gatsby + React)
+                </Link></li>
+              <li><Link style={{
+                color: `#efefef`,
               }}>
                 This website (Gatsby + React)
                 </Link></li>
